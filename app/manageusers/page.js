@@ -36,7 +36,7 @@ const Page = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                axiosPublic.patch(`/usertoadmin/${id}`)
+                axiosPublic.patch(`/personToAdmin/${id}`)
                     .then(res => {
                         if (res.data) {
 
@@ -73,7 +73,7 @@ const Page = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                axiosPublic.patch(`/userapprove/${id}`)
+                axiosPublic.patch(`/person/${id}`)
                     .then(res => {
                         if (res.data) {
 
@@ -98,6 +98,7 @@ const Page = () => {
     };
 
     const handleDelete = (id) => {
+        console.log(id)
 
         Swal.fire({
             title: "Are you sure?",
@@ -110,7 +111,7 @@ const Page = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                axiosPublic.delete(`/users/${id}`)
+                axiosPublic.delete(`/person/${id}`)
                     .then(res => {
                         console.log(res.data);
 
@@ -160,7 +161,7 @@ const Page = () => {
                                     </button>
                                     :
                                     <button
-                                        onClick={() => handleAdmin(user._id)}
+                                        onClick={() => handleAdmin(user.ID)}
                                         className="border w-[80px] border-blue-700 bg-blue-700 hover:bg-blue-800 text-white text-sm font-semibold py-1 px-2 mr-2 rounded"
                                     >
                                         User
@@ -171,7 +172,7 @@ const Page = () => {
                                 user.status === 'pending' ?
 
                                     <button
-                                        onClick={() => handlePending(user._id)}
+                                        onClick={() => handlePending(user.ID)}
                                         className="border w-[80px] border-green-700 bg-green-700 hover:bg-green-800 text-white text-sm font-semibold py-1 px-2 mr-2 rounded"
                                     >
                                         Pending
@@ -186,7 +187,7 @@ const Page = () => {
                             }
 
                             <button
-                                onClick={() => handleDelete(user._id)}
+                                onClick={() => handleDelete(user.ID)}
                                 className="border w-[70px] border-red-700 bg-red-600 hover:bg-red-700 text-white text-sm font-semibold py-1 px-2 mr-2 rounded"
                             >
                                 Delete

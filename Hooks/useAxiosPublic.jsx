@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const axiosPublic = axios.create({
-    baseURL: 'https://fis-lunch-manager-server.vercel.app'
+    baseURL: 'http://localhost:3000'
 })
 // https://fis-lunch-manager-server.vercel.app 
 // http://localhost:5000

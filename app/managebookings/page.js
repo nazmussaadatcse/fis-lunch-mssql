@@ -106,7 +106,7 @@ const Page = () => {
             if (result.isConfirmed) {
                 console.log(data);
 
-                axiosPublic.post(`/lunch`, data)
+                axiosPublic.patch(`/lunch`, data)
                     .then(res => {
                         // console.log(res.data);
 

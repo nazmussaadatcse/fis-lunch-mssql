@@ -32,8 +32,8 @@ const Page = () => {
 
         const data = {
             name: name,
+            note: 'lunch booked for user by admin',
             email: email,
-            date: new Date().toLocaleString(),
             bookBy: 'admin',
             type: 'user',
             lunchQuantity: 1
@@ -88,7 +88,6 @@ const Page = () => {
             note: formData.note,
             email: 'guest@gmail.com',
             lunchQuantity: parseInt(formData.lunchQuantity),
-            date: new Date().toLocaleString(),
             bookBy: 'admin',
             type: 'guest'
         };

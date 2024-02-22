@@ -36,8 +36,8 @@ const Lunches = ({ onRefresh }) => {
 
         const data = {
             name: user?.displayName,
+            note: 'lunch booked for user by user',
             email: user?.email,
-            date: new Date().toLocaleString(),
             bookBy: 'user',
             type:'user',
             lunchQuantity: 1
